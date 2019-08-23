@@ -1,0 +1,118 @@
+import java.util.ArrayList;
+
+/**
+ *
+ * @author Guest
+ */
+public class BNodo {
+    private int orden;
+    private int numeroLlaves;
+    private BNodo parent;
+    private ArrayList<Nodo> llaves;
+    
+    public BNodo(){
+    }
+    
+    public BNodo(int orden, BNodo parent){
+        this.parent= parent;
+        this.orden= orden;
+        numeroLlaves= orden-1;
+        llaves= new ArrayList<>();
+    }
+    
+    public BNodo(int orden, BNodo parent, ArrayList <Nodo> llaves){
+        this.parent= parent;
+        this.orden= orden;
+        numeroLlaves= orden-1;
+        this.llaves= new ArrayList<>();
+        this.llaves= llaves;
+    }
+    
+    public ArrayList<Nodo> getLlaves(){
+        return llaves;
+    }
+    
+    public boolean estaLleno(){
+        return llaves.size()>numeroLlaves;
+    }
+    
+    public int getNumeroLlaves(){
+        return llaves.size();
+    }
+    
+    public void setParent(BNodo parent){
+        this.parent= parent;
+    }
+    
+    public void agregarNodo(Nodo nuevo){
+        int i;
+        if(llaves.isEmpty()){
+            llaves.add(nuevo);
+        }
+        else{
+            for(i=0; i<llaves.size(); i=i+1){
+                if(llaves.get(i).valor>nuevo.valor){
+                    llaves.add(i, nuevo);
+                    break;
+                }
+            }
+            if(!llaves.contains(nuevo)){
+                llaves.add(nuevo);
+            }
+            else{
+                llaves.get(i+1).izq=llaves.get(i).der;
+            }
+        }
+    }
+    
+    public int obtenerPosicion(Nodo nuevo){
+        int izq=0;
+        int der=llaves.size()-1;
+        int medio=0;
+        while(izq<=der){
+            medio=(der+izq)/2;
+            if(nuevo.valor==llaves.get(medio).valor)
+                return medio;
+            if(nuevo.valor>llaves.get(medio).valor){
+                izq= medio+1;
+            }
+            else if(nuevo.valor<llaves.get(medio).valor){
+                der= medio-1;
+            }
+        }
+        return medio;
+    }
+    
+    public int getPosicionMedia(){
+        return (int)(llaves.size()-1)/2;
+    }
+    
+    public BNodo getParent(){
+        return parent;
+    }
+    
+    public void setLlaves(ArrayList<Nodo> llaves){
+        this.llaves.clear();
+        llaves.addAll(llaves);
+    }
+    
+    public void setLlaves(ArrayList<Nodo> llaves, int li, int ls){
+        for(int i= li; i<ls; i=i+1){
+            this.llaves.add(llaves.get(i));
+        }
+        int b= this.llaves.size();
+        for(int i= ls; i<b; i=i+1){
+            this.llaves.remove(this.llaves.size()-1);
+        }
+    }
+    
+    public Nodo getNodo(int i){
+        try{
+            return llaves.get(i);
+        }
+        catch(Exception e){
+            System.out.println("Error en obtener al nodo "+i);
+            return null;
+        }
+    }
+}
