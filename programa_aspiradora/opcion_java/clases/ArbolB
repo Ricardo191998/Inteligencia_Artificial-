@@ -1,1 +1,140 @@
 
+import java.util.LinkedList;
+import java.util.ArrayList;
+import java.util.Queue;
+
+/**
+ *
+ * @author Guest
+ */
+public class ArbolB {
+    private BNodo root;
+    private int orden;
+    private int minimo;
+    
+    public ArbolB(){
+        
+    }
+    
+    public ArbolB(int orden){
+        root=null;
+        this.orden= orden;
+        if(orden<4){
+            minimo=0;
+        }
+        else{
+            minimo = orden/2;
+        }
+    }
+    
+    public ArbolB(int orden, BNodo root){
+        this.root= root;
+        this.orden= orden;
+        if(orden<4){
+            minimo=0;
+        }
+        else{
+            minimo= orden/2;
+        }
+    }
+    
+    public boolean add(Nodo nodo){
+        BNodo hoja= root;
+        BNodo aux= root;
+        while(aux!=null){
+            hoja=aux;
+            int posicion= aux.obtenerPosicion(nodo);
+            Nodo referencia= aux.getLlaves().get(posicion);
+            if(nodo.valor<referencia.valor){
+                aux = referencia.izq;
+            }
+            else{
+                aux= referencia.der;
+            }
+        }
+        if(hoja==null){
+            hoja= new BNodo(orden, null);
+            root= hoja;
+        }
+        hoja.agregarNodo(nodo);
+        if(!hoja.estaLleno())
+            return true;
+        else{
+            BNodo padre= hoja.getParent();
+            divisionCelular(hoja, padre);
+            return true;
+        }
+    }
+    
+    private void divisionCelular(BNodo hoja, BNodo padre){
+        int medio= hoja.getPosicionMedia();
+        Nodo nodoMedio= hoja.getNodo(medio);
+        BNodo hermano;
+        if(padre==null){
+            padre= new BNodo(orden, null);
+            root=padre;
+            hoja.setParent(padre);
+        }    
+        hermano= new BNodo(orden, padre);
+        hermano.setLlaves(hoja.getLlaves(), medio+1, hoja.getLlaves().size());
+        hoja.setLlaves(hoja.getLlaves(), 0, medio);
+        nodoMedio.izq= hoja;
+        nodoMedio.der= hermano;
+        padre.agregarNodo(nodoMedio);
+        if(padre.estaLleno()){
+            divisionCelular(padre, padre.getParent());
+        }
+    }
+    
+    public void imprimirArbol(){
+        BNodo padre= root;
+        Queue<BNodo> cola= new LinkedList<>();
+        Queue<BNodo> visitados= new LinkedList<>();
+        cola.add(padre);
+        visitados.add(padre);
+        while(!cola.isEmpty()){
+            BNodo auxiliar= cola.poll();
+            visitar(auxiliar);
+            for(int i=0; i<auxiliar.getLlaves().size(); i=i+1){
+                if(auxiliar.getLlaves().get(i).izq!=null && !visitados.contains(auxiliar.getLlaves().get(i).izq)){
+                    cola.add(auxiliar.getLlaves().get(i).izq);
+                    visitados.add(auxiliar.getLlaves().get(i).izq);
+                }
+                if(auxiliar.getLlaves().get(i).der!=null && !visitados.contains(auxiliar.getLlaves().get(i).der)){
+                    cola.add(auxiliar.getLlaves().get(i).der);
+                    visitados.add(auxiliar.getLlaves().get(i).der);
+                }
+            }
+        }
+        System.out.println();
+    }
+    
+    private void visitar(BNodo actual){
+        System.out.print("BNodo: ");
+        for(Nodo temp : actual.getLlaves()){
+            System.out.print(temp.valor+", ");
+        }
+        System.out.println();
+    }
+    
+    public boolean buscar(int valor){
+        BNodo aux=root;
+        while(aux!=null){
+            int i= aux.obtenerPosicion(new Nodo(valor));
+            Nodo temp= aux.getNodo(i);
+            if(temp.valor==valor){
+                return true;
+            }
+            else{
+                if(temp.valor<valor){
+                    aux= temp.der;
+                }
+                else{
+                    aux= temp.izq;
+                }
+            }
+        }
+        return false;
+    }
+}
+
