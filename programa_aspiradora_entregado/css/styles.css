@@ -1,0 +1,140 @@
+
+.Titulo{
+  border: solid black;
+  text-align: center;
+}
+
+.recorridos{
+    border: 3px blue dashed;
+    background-image: url("../aspiradora.png" );
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.primeros{
+    display: flex;
+    padding:10px; 
+    margin: 30px;
+    position: relative;
+    left: 160px;
+}
+
+.segundos{
+
+    display: flex;
+    padding:10px; 
+    margin: 30px;
+    margin-top: 30px;
+    align-items: center;
+    position: relative;
+    left: 160px;
+    top: -100;
+}
+
+.terceros{
+    display: flex;
+    padding:10px; 
+    margin: 30px;
+    position: relative;
+    left: 170px;
+    top: -100;
+}
+
+.state1{
+    
+    display: inline;
+    margin: 10px;
+    margin-top: 60px;
+    align-self: center;
+    position: relative;
+    left: 350px;
+    top: -200;
+}
+
+
+.state2{
+    
+    display: inline;
+    margin: 10px;
+    margin-top: 60px;
+    position: relative;
+    left: 450px;
+    top: -100;
+}
+
+.state3{
+   
+    display: inline;
+    margin: 10px;
+    margin-top: 30px;
+    position: relative;
+    left: 230px;
+    top: -100;
+}
+
+.state4{
+    
+    display: inline;
+    margin: 10px;
+    margin-top: 30px;
+    position: relative;
+    left: 300px;
+    top: -100;
+}
+
+.state5{
+    
+    display: inline;
+    margin: 10px;
+    margin-top: 30px;
+    position: relative;
+    left: 540px;
+    top: -100;
+}
+
+
+.state6{
+   
+    display: inline;
+    margin: 10px;
+    margin-top: 30px;
+    position: relative;
+    left: 300px;
+    top: -100;
+}
+
+.state7{
+    
+    display: inline;
+    margin: 10px;
+    margin-top: 10px;
+    position: relative;
+    left: 355px;
+    bottom: -100;
+}
+
+.state8{
+    
+    display: inline;
+    margin: 10px;
+    margin-top: 10px;
+    position: relative;
+    left: 455px;
+    top: -300 ;
+}
+
+a{
+    margin:5px;
+}
+
+a:hover{
+    background-color: blue;
+}
+
+.resultados{
+    
+    display: flex;
+    padding:10px; 
+    margin: 30px;
+}

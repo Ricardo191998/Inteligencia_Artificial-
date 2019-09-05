@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>programa aspiradora</title>
+    <link rel="stylesheet" type="text/css" href="./css/styles.css"> 
+    <script  type = "text/javascript" src="./js/model.js"></script>
+    <script   src="./js/index.js"></script>
+</head>
+<body>
+    <div>
+        <div class = "Titulo">
+            <h1>Programa de angente inteligente</h1>
+            <h5>Representa los cambios de estados por medio de un árbol recorrido, primero en profundidad </h5>
+        </div>
+        <div class = 'recorridos'>
+            <div>
+                <div class = "primeros">
+                    <div class = "state1">
+                            <a class = "s1" id = "s1" onclick="defineEstadoInicial(this)">Estado1</a>
+                    
+                    </div>
+                    <div class = "state2">
+                            <a class = "s2" id = "s2" onclick="defineEstadoInicial(this)">Estado2</a>
+                    </div>    
+                </div>
+                <div class = "segundos">
+                    <div class = "state3">
+                        <a class = "s3" id = "s3" onclick="defineEstadoInicial(this)">Estado3</a>
+                        
+                    </div>
+                    <div class = "state4">
+                            <a class = "s4" id = "s4" onclick="defineEstadoInicial(this)"  >Estado4</a>
+                            
+                    </div>
+                    <div class = "state5">
+                            <a class = "s5" id = "s5" onclick="defineEstadoInicial(this)"  >Estado5</a>
+                    </div>
+                    <div class = "state6">
+                            <a class = "s6" id = "s6" onclick="defineEstadoInicial(this)" >Estado6</a>
+                    </div>
+                </div>
+                <div class = "terceros">
+                    <div class = "state7">
+                            <a class = "s7" id = "s7" onclick="defineEstadoInicial(this)" >Estado7</a>
+                    </div>
+                    <div class = "state8">
+                            <a class = "s8" id = "s8" onclick="defineEstadoInicial(this)" >Estado8</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class = "resultado">
+            <h1>Los resultados son: </h1>
+            <h4>En búsqueda primero en profundidad</h4>
+            <div class = "recorrer" id = "recorrido">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
