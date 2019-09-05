@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src = "js/model.js"></script>
+    <script src="./js/index.js"></script>
+    <title>Cuadro Mágico</title>
+</head>
+<body>
+  <div>
+      <div>
+        <h1>
+          Programa 2 Slice Puzzel
+        </h1>
+        <h2> 
+          Busqueda primero en amplitud
+        </h2>
+      </div>
+      <div>
+        <h4>
+          Cuadro Iniciado
+        </h4>
+      </div>
+      <table style="width:30%" id = "table">
+          <br>
+          <tr>
+            <th><input id = "00" type="text"></th>
+            <th><input id = "01" type="text"></th>
+            <th><input id = "02" type="text"></th>
+          </tr>
+          <tr>
+            <td><input id = "10" type="text"></td>
+            <td><input id = "11" type="text"></td>
+            <td><input id = "12" type="text"></td>
+          </tr>
+          <tr>
+            <td><input id = "20" type="text"></td>
+            <td><input id = "21" type="text"></td>
+            <td><input id = "22" type="text"></td>
+          </tr>
+        </table>   
+        <div>
+            <button onclick="ingresaDatos()" id = "ingresa">Ingresa</button>
+        </div>
+  </div>
+  <div>
+      <div>
+        <h4>
+          El resultado que se espera
+        </h4>
+      </div>
+      <table style="width:30%" id = "table">
+          <br>
+          <tr>
+            <th><input id = "11-" type="text"></th>
+            <th><input id = "12-" type="text"></th>
+            <th><input id = "13-" type="text"></th>
+          </tr>
+          <tr>
+            <td><input id = "21-" type="text"></td>
+            <td><input id = "22-" type="text"></td>
+            <td><input id = "23-" type="text"></td>
+          </tr>
+          <tr>
+            <td><input id = "31-" type="text"></td>
+            <td><input id = "32-" type="text"></td>
+            <td><input id = "33-" type="text"></td>
+          </tr>
+        </table>   
+        <div>
+            <button onclick="ingresaDatosResultado()" id = "solucion">Solucion</button>
+        </div>
+  </div>
+</body>
+</html>
