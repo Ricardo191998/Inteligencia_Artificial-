@@ -1,0 +1,153 @@
+
+.ciudad{
+		margin: 100px;
+		background-image: url(../img/recorrido.png);
+		background-repeat: no-repeat;background-repeat: no-repeat;		
+}
+@media (min-width: 480px) {
+    .ciudad {
+		background: url(../img/recorrido1.png);
+		background-repeat: no-repeat;background-repeat: no-repeat;	
+    }
+}
+
+/* Imagen utilizada en pantallas de anchura 768 px y superior */
+@media (min-width: 768px) {
+    .ciudad {
+		background: url(../img/recorrido.png);
+		background-repeat: no-repeat;background-repeat: no-repeat;	
+    }
+}
+
+/* Imagen utilizada en pantallas de anchura 1200 px y superior */
+@media (min-width: 1200px) {
+.ciudad{
+		background: url(../img/recorrido2.png);
+		background-repeat: no-repeat;background-repeat: no-repeat;	
+    }
+}
+
+
+.nivel1{
+	display: flex;
+	justify-content: space-between;
+	
+}
+
+.nivel2{
+	display: flex;
+	justify-content: space-between;
+}
+
+.nivel3{
+	display: flex;
+	justify-content: space-between;
+}
+
+
+.ciudad1{
+	position: relative;
+	background-color: green;
+	width: 40px;
+	align-items: center;
+	left : 30px;
+	border: 1px solid #000000;
+ 	-moz-border-radius: 9px;
+ 	-webkit-border-radius:9px;
+}
+
+.ciudad2{
+	position: relative;
+	background-color: green;
+	width: 40px;
+	bottom: 30px;
+	border: 1px solid #000000;
+ 	-moz-border-radius: 9px;
+ 	-webkit-border-radius:9px;
+}
+
+.ciudad3{
+	position: relative;
+	background-color: green;
+	width: 40px;
+	border: 1px solid #000000;
+ 	-moz-border-radius: 9px;
+ 	-webkit-border-radius:9px;
+}
+
+.ciudad4{
+	position: relative;
+	background-color: green;
+	width: 40px;
+	left: 30px;
+	border: 1px solid #000000;
+ 	-moz-border-radius: 9px;
+ 	-webkit-border-radius:9px;
+}
+
+.ciudad5{
+	position: relative;
+	background-color: green;
+	width: 40px;
+	border: 1px solid #000000;
+ 	-moz-border-radius: 9px;
+ 	-webkit-border-radius:9px;
+}
+
+.ciudad6{
+	position: relative;
+	background-color: green;
+	width: 40px;
+	border: 1px solid #000000;
+ 	-moz-border-radius: 9px;
+ 	-webkit-border-radius:9px;
+}
+
+.peso1-2{
+	position: relative;
+	bottom: 20px
+}
+
+
+.peso2-3{
+	position: relative;
+}
+
+
+.peso1-4{
+	position: relative;
+	left: 50px;
+	bottom: -20px
+}
+
+.peso2-4{
+	position: relative;
+}
+
+.peso3-5{
+	position: relative;
+
+}
+
+.peso3-6{
+	position: relative;
+	right: 10px;
+	bottom: -20px;
+}
+
+.pes4-5{
+	position: relative;
+}
+.peso5-6{
+	position: relative;
+}
+
+input{
+	width: 20px;
+	height: 20px;
+}
+
+[class*="col-"] {
+	width: 100%;
+  }
+  

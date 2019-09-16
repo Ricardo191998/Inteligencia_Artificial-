@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dijkstra</title>
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<script type="text/javascript " src="./js/model.js" ></script>
+	<script type="text/javascript" src="./js/index.js"></script>
+</head>
+<body>
+	<div>
+		<h1>Recorrido de ciduades con Algoritmo de  Djkstra</h1>
+		<h5>(En caso de dejar el input vacio se tomara como el peso en 1)</h5>
+		<h5>Selecciona la ciudad inicial y por las que quieras pasar.</h5>
+	</div>
+	<div>
+		<div class = "ciudad">
+			<div class = "nivel1">
+				<div class = ciudad1 id = 1 onclick="selecciona(1 , this)">
+					<h2 >1</h2>
+				</div>
+				<input type="text" name="" class = "peso1-2" id = "12">
+				<div class = ciudad2  id = 2 onclick="selecciona(2, this )">
+					<h2>2</h2>
+				</div>
+				<input type="text" name="" class = "peso2-3" id="23">
+				<div class = ciudad3  id = 3 onclick="selecciona(3, this)">
+					<h2>3</h2>
+				</div>
+			</div>
+			<div class = "nivel2">
+				<input type="text" name="" class = "peso1-4" id="14">
+				<input type="text" name="" class = "peso2-4" id="24">
+				<div class = ciudad5  id = 4 onclick="selecciona(5, this)">
+					<h2>5</h2>
+				</div>
+				<input type="text" name="" class = "peso3-5" id="35">
+				<input type="text" name="" class = "peso3-6" id="36">
+			</div>
+			<div class = "nivel3">
+				<div class = ciudad4 id = 5 onclick="selecciona(4, this)">
+					<h2>4</h2>
+				</div>
+				<input type="text" name="" class = "peso4-5" id="45">
+				<input type="text" name="" class = "peso5-6" id="56">
+				<div class = ciudad6  id = 6 onclick="selecciona(6, this)">
+					<h2>6</h2>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div>
+		<button onclick="obtenerDatos()" > RESOLVER </button>
+	</div>
+	
+</body>
+</html>
