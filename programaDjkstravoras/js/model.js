@@ -52,6 +52,20 @@ class  Nodo{
         this.vecinos = [];
     }
 
+    agregarVecino(valor){
+        if(this.noRepetir(valor.valor)){
+            let nodo = new Nodo(valor.valor);
+            nodo.precio += parseInt(valor.precio, 10) + parseInt(this.precio);
+            this.visitados.forEach(function (element){
+                nodo.visitados.push(element);
+            });
+            this.vecinos.push(nodo);
+            return true;
+        }else{
+            return false;
+        }
+    }
+
     agregarVecinos(valor){
         for(var n = 0 ; n < valor.length; n++) {
             if(this.noRepetir(valor[n].valor)){

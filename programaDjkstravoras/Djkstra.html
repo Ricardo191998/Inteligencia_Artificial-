@@ -8,8 +8,9 @@
 </head>
 <body>
 	<div>
-		<h1>Recorrido de ciduades con Algoritmo de  Djkstra</h1>
+		<h1>Recorrido de ciduades con Algoritmo Voraz</h1>
 		<h5>(En caso de dejar el input vacio se tomara como el peso en 1)</h5>
+		<h5>La euristica será la distancia que hay de una ciudad a otra</h5>
 		<h5>Selecciona la ciudad inicial y por las que quieras pasar.</h5>
 	</div>
 	<div>
@@ -19,32 +20,57 @@
 					<h2 >1</h2>
 				</div>
 				<input type="text" name="" class = "peso1-2" id = "12">
+				<h5 id = "d12" title  = "5">d = 5</h5>
 				<div class = ciudad2  id = 2 onclick="selecciona(2, this )">
 					<h2>2</h2>
 				</div>
 				<input type="text" name="" class = "peso2-3" id="23">
+				<h5 id = "d23" title = "5" >d = 5</h5>
 				<div class = ciudad3  id = 3 onclick="selecciona(3, this)">
 					<h2>3</h2>
 				</div>
 			</div>
 			<div class = "nivel2">
 				<input type="text" name="" class = "peso1-4" id="14">
+				<h5 id = "d14" title= "5">d = 5</h5>
 				<input type="text" name="" class = "peso2-4" id="24">
+				<h5 id = "d24" title  = "2">d = 2</h5>
 				<div class = ciudad5  id = 5 onclick="selecciona(5, this)">
 					<h2>5</h2>
 				</div>
 				<input type="text" name="" class = "peso3-5" id="35">
+				<h5 id = "d35" title= "4">d = 4</h5>
 				<input type="text" name="" class = "peso3-6" id="36">
+				<h5 id = "d36" title  = "8"> d = 8</h5>
 			</div>
 			<div class = "nivel3">
 				<div class = ciudad4 id = 4 onclick="selecciona(4, this)">
 					<h2>4</h2>
 				</div>
 				<input type="text" name="" class = "peso4-5" id="45">
+				<h5 id = "d45" title  = "2">d = 2</h5>
 				<input type="text" name="" class = "peso5-6" id="56">
+				<h5 id = "d56" title  = "3">d = 3</h5>
 				<div class = ciudad6  id = 6 onclick="selecciona(6, this)">
 					<h2>6</h2>
 				</div>
+			</div>
+			<div class = "nivel4">
+				<div>
+						<input type="text" name="" class = "peso4-7" id="47">
+						<h5 id = "d47" class = "d47" title  = "2">d = 2</h5>
+						<div class = ciudad7 id = 7 onclick="selecciona(7, this)">
+								<h2>7</h2>
+						</div>
+				</div>
+				<div>
+						<input type="text" name="" class = "peso6-8" id="68">
+						<h5 id = "d68" class = "d68" title  = "2">d = 2</h5>
+						<div class = ciudad8 id = 8 onclick="selecciona(7, this)">
+								<h2>8</h2>
+						</div>
+				</div>
+			
 			</div>
 		</div>
 	</div>
